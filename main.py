@@ -26,19 +26,19 @@ def start(message):
     keyboard.row("monday", "tuesday", "wednesday")
     keyboard.row("thusday", "friday", "this week", "next week")
     keyboard.row("/mtuci", "/help")
-    bot.send_message(message.chat.id, "Hello. What you want for today?", reply_markup=keyboard)
+    bot.send_message(message.chat.id, "Добрый день. Что бы вы хотели на сегодня?", reply_markup=keyboard)
 
 @bot.message_handler(commands=('help'))
 def help(message):
-    bot.send_message(message.chat.id, "I dead")
+    bot.send_message(message.chat.id, "Помоги")
 
 
 @bot.message_handler(commands=('week'))
 def help(message):
     if int(tooday) % 2 == 0:
-        bot.send_message(message.chat.id, "week is up")
+        bot.send_message(message.chat.id, "Верхняя")
     else:
-        bot.send_message(message.chat.id, "week is down")
+        bot.send_message(message.chat.id, "Нижняя")
 
 
 @bot.message_handler(commands=('mtuci'))
